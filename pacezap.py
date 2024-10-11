@@ -41,7 +41,7 @@ def main (pagina):
 
     # campo enviar msg
     box_show_message = ft.TextField(label="Write your message")
-    button_send = ft.ElevatedButton(label="Send message", on_click= send_message)
+    button_send = ft.ElevatedButton(text="Send message", on_click= send_message)
     row_send = ft.Row([box_show_message,button_send])
 
     # criando a visualizacao do chat em coluna
@@ -78,9 +78,9 @@ def main (pagina):
     # criar popup
     title_popup = ft.Text("Welcome to the PaceZap!")
     box_name = ft.TextField(label= "Write your name...")
-    button_popup = ft.ElevatedButton("Join in the chat", on_click= join_chat)
+    button_popup = ft.ElevatedButton(text="Join in the chat", on_click= join_chat)
 
-    popup = ft.Alertdialog(title= title_popup, content= box_name, actions= [button_popup])
+    popup = ft.AlertDialog(title= title_popup, content= box_name, actions= [button_popup])
 
     # funcao do botao de iniciar
     def open_popup (event):
@@ -90,11 +90,11 @@ def main (pagina):
         print("Button cliked.")
 
     # adicionar um botao
-    buttonInit = ft.ElevatedButton("Init Chat", on_click= open_popup)
+    buttonInit = ft.ElevatedButton(text="Init Chat", on_click= open_popup)
     
     # inserir os objetos na tela
-    pagina.add(title)
+    pagina.add(title_popup)
     pagina.add(buttonInit)
 
 # passo 3: executar uma funcao com o flet
-ft.app(main, view= ft.WEB_BROWSER)
+ft.app(main)
